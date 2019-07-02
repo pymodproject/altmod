@@ -11,6 +11,12 @@ env = environ()
 # the 'Automodel_statistical_potential' class).
 a = Automodel_statistical_potential(env, alnfile='tar_tem_alignment.ali',
                                     knowns='1bdm', sequence='TvLDH')
+
+# Uncomment the line below to employ a more thorough molecular dynamics refinement phase.
+# When coupled with the use of DOPE, this slightly increases 3D modeling quality at
+# the expense of an increase in computational times.
+# a.md_level = refine.slow
+
 a.starting_model = 1
 a.ending_model = 5
 a.make()

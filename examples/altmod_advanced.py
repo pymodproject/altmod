@@ -13,6 +13,6 @@ a = Automodel_statistical_potential(env, alnfile='tar_tem_alignment.ali',
 a.starting_model = 1
 a.ending_model = 5
 a.statistical_potential = "dfire"
-a.altmod_w_sp = 1.0
+a.altmod_w_sp = 0.75
 a.sp_contact_shell = 7.5
 a.make()

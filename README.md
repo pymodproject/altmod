@@ -2,6 +2,8 @@
 altMOD is a MODELLER (https://salilab.org/modeller/) [1] plugin for improved 3D homology model building. Right now, it allows to incorporate in the program's objective function terms for interatomic distances statistical potentials, such as DOPE [2] and DFIRE [3]. The effect of adding statistical potentials in the objective function of MODELLER is described in _Revisiting the "satisfaction of spatial restraints" approach of MODELLER for protein
 homology modeling"_ (Janson et al., 2019). In a benchmark with 225 single-template homology models, we found that the inclusion of DOPE in the objective function of MODELLER brings an average improvement of 1.3% and 2.0% in GDT-HA [4] and lDDT [5] and a large improvement of -29.8% in MolProbity scores [6].
 
+The altMOD package also contains code for easily running MODELLER with user-defined parameters for homology-derived distance restraints (see the _examples_ folder).
+
 # Installation
 Just put the _altmod_ directory (the one with the _\_\_init\_\_.py_ file inside it) of this package in one of your _sys.path_ directories.
 

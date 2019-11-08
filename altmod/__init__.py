@@ -1,11 +1,12 @@
+from __future__ import print_function
 import os
 import sys
-
-from modeller import physical, group_restraints, gbsa
+from modeller import physical, group_restraints
+from modeller import alignment, forms, features
 from modeller.automodel import automodel
 
 
-__version__ = 0.1
+__version__ = 0.2
 
 module_path = sys.modules[__name__].__file__
 altmod_dirpath = os.path.dirname(module_path)
@@ -16,9 +17,15 @@ class Automodel_statistical_potential(automodel):
     Automodel using statistical potentials.
     """
 
-    def __init__(self, *args, **params):
+    # def __init__(self, *args, **params):
+    #     automodel.__init__(self, *args, **params)
 
-        automodel.__init__(self, *args, **params)
+
+    def set_defaults(self):
+
+        super(Automodel_statistical_potential, self).set_defaults()
+
+        print("@ Setting 'Automodel_statistical_potential' defaults.")
 
         # Type of statistical potential to include in the objective function of MODELLER.
         self.statistical_potential = "dope"

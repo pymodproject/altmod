@@ -4,12 +4,15 @@
 #               https://salilab.org/modeller/manual/node24.html
 #               https://salilab.org/modeller/manual/node28.html
 
+import os
 from modeller import *
 from modeller.automodel import *
 from altmod import Automodel_statistical_potential
 
 log.verbose()
+example_dirpath = os.path.dirname(__file__)
 env = environ()
+env.io.atom_files_directory.append(example_dirpath)
 
 # To use HETATMs, simply set the hetatm flag on.
 env.io.hetatm = True
@@ -60,7 +63,7 @@ class MyModel_statistical_potential(Automodel_statistical_potential):
 
 # Actually builds the models.
 a = MyModel_statistical_potential(env,
-                                  alnfile='tar_tem_alignment.ali',
+                                  alnfile=os.path.join(example_dirpath, 'tar_tem_alignment.ali'),
                                   knowns='5fd1',
                                   sequence='1fdx')
 a.starting_model = 1
